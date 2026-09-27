@@ -1,0 +1,674 @@
+Command line invocation:
+    /Applications/Xcode_16.4.app/Contents/Developer/usr/bin/xcodebuild -project AuroraMusic.xcodeproj -scheme AuroraMusic -configuration Release -sdk iphoneos -derivedDataPath build -destination generic/platform=iOS CODE_SIGN_IDENTITY= CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO CODE_ENTITLEMENTS= CODE_SIGN_ENTITLEMENTS= DEVELOPMENT_TEAM= build
+
+Build settings from command line:
+    CODE_ENTITLEMENTS = 
+    CODE_SIGN_ENTITLEMENTS = 
+    CODE_SIGN_IDENTITY = 
+    CODE_SIGNING_ALLOWED = NO
+    CODE_SIGNING_REQUIRED = NO
+    DEVELOPMENT_TEAM = 
+    SDKROOT = iphoneos18.5
+
+note: Using codesigning identity override: 
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'AuroraMusic' in project 'AuroraMusic' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode_16.4.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/runner/work/KUgou/KUgou/ios/Sources/Resources/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode_16.4.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 86c70563804c0fcb8a7a4c45078bbeef
+Build description path: /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/XCBuildData/86c70563804c0fcb8a7a4c45078bbeef.xcbuilddata
+ClangStatCache /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk /Users/runner/work/KUgou/KUgou/ios/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache
+    cd /Users/runner/work/KUgou/KUgou/ios/AuroraMusic.xcodeproj
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -o /Users/runner/work/KUgou/KUgou/ios/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache
+
+CreateBuildDirectory /Users/runner/work/KUgou/KUgou/ios/build/Build/Products
+    cd /Users/runner/work/KUgou/KUgou/ios/AuroraMusic.xcodeproj
+    builtin-create-build-directory /Users/runner/work/KUgou/KUgou/ios/build/Build/Products
+
+CreateBuildDirectory /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex
+    cd /Users/runner/work/KUgou/KUgou/ios/AuroraMusic.xcodeproj
+    builtin-create-build-directory /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex
+
+CreateBuildDirectory /Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos
+    cd /Users/runner/work/KUgou/KUgou/ios/AuroraMusic.xcodeproj
+    builtin-create-build-directory /Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos
+
+WriteAuxiliaryFile /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic-6b308c689e8be67d8c67c4bdcb629587-VFS-iphoneos/all-product-headers.yaml
+    cd /Users/runner/work/KUgou/KUgou/ios/AuroraMusic.xcodeproj
+    write-file /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic-6b308c689e8be67d8c67c4bdcb629587-VFS-iphoneos/all-product-headers.yaml
+
+CreateBuildDirectory /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos
+    cd /Users/runner/work/KUgou/KUgou/ios/AuroraMusic.xcodeproj
+    builtin-create-build-directory /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos
+
+WriteAuxiliaryFile /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic_const_extract_protocols.json (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    write-file /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic.SwiftFileList (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    write-file /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic.SwiftFileList
+
+WriteAuxiliaryFile /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic.SwiftConstValuesFileList (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    write-file /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic.LinkFileList (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    write-file /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic.LinkFileList
+
+WriteAuxiliaryFile /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic-OutputFileMap.json (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    write-file /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic.hmap (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    write-file /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic.hmap
+
+WriteAuxiliaryFile /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic.DependencyStaticMetadataFileList (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    write-file /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic.DependencyMetadataFileList (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    write-file /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-project-headers.hmap (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    write-file /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-project-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-own-target-headers.hmap (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    write-file /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-generated-files.hmap (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    write-file /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-generated-files.hmap
+
+WriteAuxiliaryFile /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-all-target-headers.hmap (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    write-file /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-all-non-framework-target-headers.hmap (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    write-file /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-all-non-framework-target-headers.hmap
+
+MkDir /Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos/AuroraMusic.app (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    /bin/mkdir -p /Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos/AuroraMusic.app
+
+MkDir /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/assetcatalog_output/thinned (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    /bin/mkdir -p /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/assetcatalog_output/thinned
+
+MkDir /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/assetcatalog_output/unthinned (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    /bin/mkdir -p /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/assetcatalog_output/unthinned
+
+GenerateAssetSymbols /Users/runner/work/KUgou/KUgou/ios/Sources/Resources/Assets.xcassets (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    /Applications/Xcode_16.4.app/Contents/Developer/usr/bin/actool /Users/runner/work/KUgou/KUgou/ios/Sources/Resources/Assets.xcassets --compile /Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos/AuroraMusic.app --output-format human-readable-text --notices --warnings --export-dependency-info /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/assetcatalog_dependencies --output-partial-info-plist /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/assetcatalog_generated_info.plist --app-icon AppIcon --accent-color AccentColor --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --target-device ipad --minimum-deployment-target 16.0 --platform iphoneos --bundle-identifier com.aurora.music --generate-swift-asset-symbol-extensions NO --generate-swift-asset-symbols /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/DerivedSources/GeneratedAssetSymbols.swift --generate-objc-asset-symbols /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/DerivedSources/GeneratedAssetSymbols.h --generate-asset-symbol-index /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/* com.apple.actool.compilation-results */
+/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/DerivedSources/GeneratedAssetSymbols.h
+/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/DerivedSources/GeneratedAssetSymbols.swift
+
+
+CompileAssetCatalogVariant thinned /Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos/AuroraMusic.app /Users/runner/work/KUgou/KUgou/ios/Sources/Resources/Assets.xcassets (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    /Applications/Xcode_16.4.app/Contents/Developer/usr/bin/actool /Users/runner/work/KUgou/KUgou/ios/Sources/Resources/Assets.xcassets --compile /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/assetcatalog_generated_info.plist_thinned --app-icon AppIcon --accent-color AccentColor --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --target-device ipad --minimum-deployment-target 16.0 --platform iphoneos
+/* com.apple.actool.compilation-results */
+/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/assetcatalog_generated_info.plist_thinned
+/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/assetcatalog_output/thinned/Assets.car
+
+
+SwiftDriver AuroraMusic normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    builtin-SwiftDriver -- /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name AuroraMusic -O -whole-module-optimization -enforce-exclusivity\=checked @/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -target arm64-apple-ios16.0 -g -module-cache-path /Users/runner/work/KUgou/KUgou/ios/build/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos -F /Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos -emit-localized-strings -emit-localized-strings-path /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64 -c -num-threads 3 -Xcc -ivfsstatcache -Xcc /Users/runner/work/KUgou/KUgou/ios/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -output-file-map /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/KUgou/KUgou/ios/build/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-generated-files.hmap -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-own-target-headers.hmap -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-project-headers.hmap -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic-Swift.h -working-directory /Users/runner/work/KUgou/KUgou/ios -no-emit-module-separately-wmo
+
+SwiftCompile normal arm64 Compiling\ AppUpdater.swift,\ ArtworkPalette.swift,\ AuroraMusicApp.swift,\ Catalog.swift,\ Components.swift,\ CoverResolver.swift,\ DiscoverView.swift,\ DownloadManager.swift,\ LibraryStore.swift,\ LibraryView.swift,\ LyricLine.swift,\ LyricsView.swift,\ NetEaseClient.swift,\ NetEaseCrypto.swift,\ PlayerStore.swift,\ PlayerView.swift,\ PlaylistViews.swift,\ ProfileView.swift,\ QueueView.swift,\ RootView.swift,\ ScriptSourceRunner.swift,\ SearchView.swift,\ Song.swift,\ SourceResolver.swift,\ SourceSettingsView.swift,\ ThirdPartySource.swift,\ UpdateView.swift,\ GeneratedAssetSymbols.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Player/AppUpdater.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Player/ArtworkPalette.swift /Users/runner/work/KUgou/KUgou/ios/Sources/App/AuroraMusicApp.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Models/Catalog.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/Components.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Player/CoverResolver.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/DiscoverView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Player/DownloadManager.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Player/LibraryStore.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/LibraryView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Models/LyricLine.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/LyricsView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Net/NetEaseClient.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Net/NetEaseCrypto.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Player/PlayerStore.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlayerView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/ProfileView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/QueueView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/RootView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Net/ScriptSourceRunner.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Models/Song.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Net/SourceResolver.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/SourceSettingsView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Net/ThirdPartySource.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/UpdateView.swift /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'AuroraMusic' from project 'AuroraMusic')
+CompileSwift normal arm64 (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:4:20: error: static properties may only be declared on a type
+    private static let key = "aurora.collected.playlists"
+            ~~~~~~~^
+            
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:6:12: error: static methods may only be declared on a type
+    static func isCollected(_ id: String) -> Bool {
+    ~~~~~~~^
+    
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:10:12: error: static methods may only be declared on a type
+    static func set(_ collected: Bool, for id: String) {
+    ~~~~~~~^
+    
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:16:1: error: extraneous '}' at top level
+}
+^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:28:64: error: unterminated string literal
+                EmptyStateView(icon: "music.note.list", title: "杩欓噷杩樻病鏈夋瓕鏇?)
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:42:42: error: unterminated string literal
+                        Text(subtitle ?? "\(songs.count) 棣?)
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:71:1: error: extraneous '}' at top level
+}
+^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:116:89: error: expected ',' separator
+                                            Label("浠庢瓕鍗曠Щ闄?, systemImage: "minus.circle")
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:116:101: error: unterminated string literal
+                                            Label("浠庢瓕鍗曠Щ闄?, systemImage: "minus.circle")
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:164:55: error: unterminated string literal
+                    if playlist.trackCount > 0 { Text("\(playlist.trackCount) 棣?) }
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:176:5: error: attribute 'private' can only be used in a non-local scope
+    private var actionBar: some View {
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:217:5: error: attribute 'private' can only be used in a non-local scope
+    private func play(_ song: Song) {
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:223:5: error: attribute 'private' can only be used in a non-local scope
+    private func load() async {
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:307:1: error: extraneous '}' at top level
+}
+^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:377:1: error: extraneous '}' at top level
+}
+^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:40:68: error: unterminated string literal
+                    EmptyStateView(icon: "magnifyingglass", title: "娌℃悳鍒?, message: errorMessage)
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:78:27: error: unterminated string literal
+                TextField("姝屾洸銆佹瓕鎵嬨€佹瓕鍗?, text: $keyword)
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:229:30: error: unterminated string literal
+                        Text("鏈€杩戞悳绱?)
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:302:28: error: unterminated string literal
+            errorMessage = "鎹釜鍏抽敭璇嶈瘯璇?
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:306:20: error: static properties may only be declared on a type
+    private static let historyKey = "aurora.search.history"
+            ~~~~~~~^
+            
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:308:20: error: static methods may only be declared on a type
+    private static func loadHistory() -> [String] {
+            ~~~~~~~^
+            
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:312:20: error: static methods may only be declared on a type
+    private static func saveHistory(_ value: [String]) {
+            ~~~~~~~^
+            
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:315:1: error: extraneous '}' at top level
+}
+^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Player/AppUpdater.swift:27:10: error: type 'AppUpdater.Phase' does not conform to protocol 'Equatable'
+    enum Phase: Equatable {
+         ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Player/AppUpdater.swift:31:24: note: associated value type 'AppUpdater.Release' does not conform to protocol 'Equatable', preventing synthesized conformance of 'AppUpdater.Phase' to 'Equatable'
+        case available(Release)
+                       ^
+Swift.==:1:24: note: candidate would match if 'AppUpdater.Phase' conformed to 'RawRepresentable'
+@inlinable public func == <T>(lhs: T, rhs: T) -> Bool where T : RawRepresentable, T.RawValue : Equatable
+                       ^
+Swift.FloatingPoint.==:2:20: note: candidate would match if 'AppUpdater.Phase' conformed to 'FloatingPoint'
+public static func == (lhs: Self, rhs: Self) -> Bool}
+                   ^
+Swift.BinaryInteger.==:2:20: note: candidate would match if 'AppUpdater.Phase' conformed to 'BinaryInteger'
+public static func == <Other>(lhs: Self, rhs: Other) -> Bool where Other : BinaryInteger}
+                   ^
+Swift._Pointer.==:2:20: note: candidate would match if 'AppUpdater.Phase' conformed to '_Pointer'
+public static func == (lhs: Self, rhs: Self) -> Bool}
+                   ^
+Swift._Pointer.==:2:31: note: candidate would match if 'AppUpdater.Phase' conformed to '_Pointer'
+@inlinable public static func == <Other>(lhs: Self, rhs: Other) -> Bool where Other : _Pointer}
+                              ^
+Swift.Strideable.==:2:31: note: candidate would match if 'AppUpdater.Phase' conformed to 'Strideable'
+@inlinable public static func == (x: Self, y: Self) -> Bool}
+                              ^
+Swift.StringProtocol.==:2:31: note: candidate would match if 'AppUpdater.Phase' conformed to 'StringProtocol'
+@inlinable public static func == <RHS>(lhs: Self, rhs: RHS) -> Bool where RHS : StringProtocol}
+                              ^
+Swift.SIMD.==:2:20: note: candidate would match if 'AppUpdater.Phase' conformed to 'SIMD'
+public static func == (a: Self, b: Self) -> Bool}
+                   ^
+Foundation.AttributedStringProtocol.==:2:20: note: candidate would match if 'AppUpdater.Phase' conformed to 'AttributedStringProtocol'
+public static func == <RHS>(lhs: Self, rhs: RHS) -> Bool where RHS : AttributedStringProtocol}
+                   ^
+Foundation._BridgedStoredNSError.==:2:20: note: candidate would match if 'AppUpdater.Phase' conformed to '_BridgedStoredNSError'
+public static func == (lhs: Self, rhs: Self) -> Bool}
+                   ^
+CoreFoundation._CFObject.==:2:20: note: candidate would match if 'AppUpdater.Phase' conformed to '_CFObject'
+public static func == (left: Self, right: Self) -> Bool}
+                   ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Player/AppUpdater.swift:27:10: note: add stubs for conformance
+    enum Phase: Equatable {
+         ^
+Swift.Equatable.==:2:13: note: protocol requires function '==' with type '(AppUpdater.Phase, AppUpdater.Phase) -> Bool'
+static func == (lhs: Self, rhs: Self) -> Bool}
+            ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/Components.swift:303:13: error: cannot find 'PlaylistDetailView' in scope
+            PlaylistDetailView(playlist: playlist)
+            ^~~~~~~~~~~~~~~~~~
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/DiscoverView.swift:40:21: error: cannot find 'SearchView' in scope
+                    SearchView(initialKeyword: feed.hotSearch.first ?? "")
+                    ^~~~~~~~~~
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/DiscoverView.swift:52:29: error: cannot find 'SearchView' in scope
+                            SearchView(initialKeyword: keyword)
+                            ^~~~~~~~~~
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/DiscoverView.swift:103:25: error: cannot find 'PlaylistDetailView' in scope
+                        PlaylistDetailView(playlist: playlist)
+                        ^~~~~~~~~~~~~~~~~~
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/DiscoverView.swift:139:21: error: cannot find 'SongListView' in scope
+                    SongListView(title: "新歌速递", songs: feed.newSongs)
+/Users/runner/work/KUgou/KUgou/ios/Sources/Player/DownloadManager.swift:177:24: warning: no calls to throwing functions occur within 'try' expression
+        let resolved = try await SourceResolver.resolve(song: song, quality: SourceStore.shared.quality)
+                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/LibraryView.swift:329:25: error: cannot find 'PlaylistDetailView' in scope
+                        PlaylistDetailView(playlist: Playlist(id: playlist.id,
+                        ^~~~~~~~~~~~~~~~~~
+/Users/runner/work/KUgou/KUgou/ios/Sources/Net/NetEaseClient.swift:100:13: warning: variable 'parts' was never mutated; consider changing to 'let' constant
+        var parts = [
+        ~~~ ^
+        let
+/Users/runner/work/KUgou/KUgou/ios/Sources/Net/NetEaseCrypto.swift:288:13: warning: 'CC_MD5' was deprecated in iOS 13.0: This function is cryptographically broken and should not be used in security contexts. Clients should migrate to SHA256 (or stronger).
+            CC_MD5(buffer.baseAddress, CC_LONG(count), &digest)
+            ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Player/PlayerStore.swift:191:35: warning: reference to captured var 'name' in concurrently-executing code; this is an error in the Swift 6 language mode
+                self.sourceName = name
+                                  ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Player/PlayerStore.swift:192:37: warning: reference to captured var 'label' in concurrently-executing code; this is an error in the Swift 6 language mode
+                self.bitrateLabel = label
+                                    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Player/PlayerStore.swift:193:27: warning: reference to captured var 'resolvedURL' in concurrently-executing code; this is an error in the Swift 6 language mode
+                guard let resolvedURL else {
+                          ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Player/PlayerStore.swift:199:59: warning: reference to captured var 'isThirdParty' in concurrently-executing code; this is an error in the Swift 6 language mode
+                self.attach(url: resolvedURL, thirdParty: isThirdParty, autoplay: autoplay)
+                                                          ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:19:9: error: global 'let' declaration requires an initializer expression
+    let title: String
+        ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:19:9: note: add an initializer to silence this error
+    let title: String
+        ^
+                = <#initializer#>
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:20:9: error: global 'let' declaration requires an initializer expression
+    let songs: [Song]
+        ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:20:9: note: add an initializer to silence this error
+    let songs: [Song]
+        ^
+                     = <#initializer#>
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:23:5: error: property wrappers are not yet supported in top-level code
+    @EnvironmentObject private var store: PlayerStore
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:23:36: error: global 'var' declaration requires an initializer expression or an explicitly stated getter
+    @EnvironmentObject private var store: PlayerStore
+                                   ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:23:36: note: add an initializer to silence this error
+    @EnvironmentObject private var store: PlayerStore
+                                   ^
+                                           = <#initializer#>
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:25:9: error: invalid redeclaration of 'body'
+    var body: some View {
+        ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:29:9: note: 'body' previously declared here
+    var body: some View {
+        ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:29:9: note: 'body' previously declared here
+    var body: some View {
+        ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:74:9: error: global 'let' declaration requires an initializer expression
+    let playlist: Playlist
+        ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:74:9: note: add an initializer to silence this error
+    let playlist: Playlist
+        ^
+                   = <#initializer#>
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:77:5: error: property wrappers are not yet supported in top-level code
+    @EnvironmentObject private var store: PlayerStore
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:77:36: error: global 'var' declaration requires an initializer expression or an explicitly stated getter
+    @EnvironmentObject private var store: PlayerStore
+                                   ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:77:36: note: add an initializer to silence this error
+    @EnvironmentObject private var store: PlayerStore
+                                   ^
+                                           = <#initializer#>
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:78:5: error: property wrappers are not yet supported in top-level code
+    @ObservedObject private var library = LibraryStore.shared
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:79:5: error: property wrappers are not yet supported in top-level code
+    @State private var songs: [Song] = []
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:80:5: error: property wrappers are not yet supported in top-level code
+    @State private var isLoading = false
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:81:5: error: property wrappers are not yet supported in top-level code
+    @State private var errorMessage: String?
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:82:5: error: property wrappers are not yet supported in top-level code
+    @State private var isCollected = false
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:83:5: error: property wrappers are not yet supported in top-level code
+    @State private var didLoadCollection = false
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:90:9: error: invalid redeclaration of 'body'
+    var body: some View {
+        ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:29:9: note: 'body' previously declared here
+    var body: some View {
+        ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:29:9: note: 'body' previously declared here
+    var body: some View {
+        ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:239:9: error: global 'let' declaration requires an initializer expression
+    let artist: Artist
+        ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:239:9: note: add an initializer to silence this error
+    let artist: Artist
+        ^
+                 = <#initializer#>
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:241:5: error: property wrappers are not yet supported in top-level code
+    @EnvironmentObject private var store: PlayerStore
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:241:36: error: global 'var' declaration requires an initializer expression or an explicitly stated getter
+    @EnvironmentObject private var store: PlayerStore
+                                   ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:241:36: note: add an initializer to silence this error
+    @EnvironmentObject private var store: PlayerStore
+                                   ^
+                                           = <#initializer#>
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:242:5: error: property wrappers are not yet supported in top-level code
+    @State private var songs: [Song] = []
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:242:24: error: invalid redeclaration of 'songs'
+    @State private var songs: [Song] = []
+                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:79:24: note: 'songs' previously declared here
+    @State private var songs: [Song] = []
+                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:79:24: note: 'songs' previously declared here
+    @State private var songs: [Song] = []
+                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:243:5: error: property wrappers are not yet supported in top-level code
+    @State private var isLoading = false
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:243:24: error: invalid redeclaration of 'isLoading'
+    @State private var isLoading = false
+                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:80:24: note: 'isLoading' previously declared here
+    @State private var isLoading = false
+                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:80:24: note: 'isLoading' previously declared here
+    @State private var isLoading = false
+                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:244:5: error: property wrappers are not yet supported in top-level code
+    @State private var errorMessage: String?
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:244:24: error: invalid redeclaration of 'errorMessage'
+    @State private var errorMessage: String?
+                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:81:24: note: 'errorMessage' previously declared here
+    @State private var errorMessage: String?
+                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:81:24: note: 'errorMessage' previously declared here
+    @State private var errorMessage: String?
+                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:246:9: error: invalid redeclaration of 'body'
+    var body: some View {
+        ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:29:9: note: 'body' previously declared here
+    var body: some View {
+        ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:29:9: note: 'body' previously declared here
+    var body: some View {
+        ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:289:18: error: invalid redeclaration of 'play'
+    private func play(_ song: Song) {
+                 ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:66:18: note: 'play' previously declared here
+    private func play(_ song: Song) {
+                 ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:66:18: note: 'play' previously declared here
+    private func play(_ song: Song) {
+                 ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:310:9: error: global 'let' declaration requires an initializer expression
+    let album: Album
+        ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:310:9: note: add an initializer to silence this error
+    let album: Album
+        ^
+                = <#initializer#>
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:312:5: error: property wrappers are not yet supported in top-level code
+    @EnvironmentObject private var store: PlayerStore
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:312:36: error: global 'var' declaration requires an initializer expression or an explicitly stated getter
+    @EnvironmentObject private var store: PlayerStore
+                                   ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:312:36: note: add an initializer to silence this error
+    @EnvironmentObject private var store: PlayerStore
+                                   ^
+                                           = <#initializer#>
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:313:5: error: property wrappers are not yet supported in top-level code
+    @State private var songs: [Song] = []
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:313:24: error: invalid redeclaration of 'songs'
+    @State private var songs: [Song] = []
+                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:79:24: note: 'songs' previously declared here
+    @State private var songs: [Song] = []
+                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:79:24: note: 'songs' previously declared here
+    @State private var songs: [Song] = []
+                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:314:5: error: property wrappers are not yet supported in top-level code
+    @State private var isLoading = false
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:314:24: error: invalid redeclaration of 'isLoading'
+    @State private var isLoading = false
+                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:80:24: note: 'isLoading' previously declared here
+    @State private var isLoading = false
+                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:80:24: note: 'isLoading' previously declared here
+    @State private var isLoading = false
+                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:315:5: error: property wrappers are not yet supported in top-level code
+    @State private var errorMessage: String?
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:315:24: error: invalid redeclaration of 'errorMessage'
+    @State private var errorMessage: String?
+                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:81:24: note: 'errorMessage' previously declared here
+    @State private var errorMessage: String?
+                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:81:24: note: 'errorMessage' previously declared here
+    @State private var errorMessage: String?
+                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:317:9: error: invalid redeclaration of 'body'
+    var body: some View {
+        ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:29:9: note: 'body' previously declared here
+    var body: some View {
+        ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:29:9: note: 'body' previously declared here
+    var body: some View {
+        ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:360:18: error: invalid redeclaration of 'play'
+    private func play(_ song: Song) {
+                 ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:66:18: note: 'play' previously declared here
+    private func play(_ song: Song) {
+                 ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:66:18: note: 'play' previously declared here
+    private func play(_ song: Song) {
+                 ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:366:18: error: invalid redeclaration of 'load()'
+    private func load() async {
+                 ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:295:18: note: 'load()' previously declared here
+    private func load() async {
+                 ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:295:18: note: 'load()' previously declared here
+    private func load() async {
+                 ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:28:55: error: missing argument for parameter 'title' in call
+                EmptyStateView(icon: "music.note.list", title: "杩欓噷杩樻病鏈夋瓕鏇?)
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/Components.swift:374:8: note: 'init(icon:title:message:)' declared here
+struct EmptyStateView: View {
+       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:54:18: error: trailing closure passed to parameter of type 'Visibility' that does not accept a closure
+        .toolbar {
+                 ^
+SwiftUI.View.toolbar:6:27: note: 'toolbar(_:for:)' declared here
+  nonisolated public func toolbar(_ visibility: Visibility, for bars: ToolbarPlacement...) -> some View
+                          ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:102:21: error: cannot find 'actionBar' in scope
+                    actionBar
+                    ^~~~~~~~~
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:134:25: error: cannot find 'CollectionState' in scope
+                        CollectionState.set(isCollected, for: playlist.id)
+                        ^~~~~~~~~~~~~~~
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:146:31: error: cannot find 'CollectionState' in scope
+                isCollected = CollectionState.isCollected(playlist.id)
+                              ^~~~~~~~~~~~~~~
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:214:10: error: type of expression is ambiguous without a type annotation
+        .padding(.bottom, 18)
+~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift:152:35: error: function declares an opaque return type, but has no return statements in its body from which to infer an underlying type
+    private var header: some View {
+                                  ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/RootView.swift:22:21: error: cannot find 'SearchView' in scope
+                    SearchView()
+                    ^~~~~~~~~~
+/Users/runner/work/KUgou/KUgou/ios/Sources/Net/ScriptSourceRunner.swift:298:27: warning: capture of 'self' with non-sendable type 'ScriptRuntime?' in a '@Sendable' closure
+                guard let self else { return resume(nil) }
+                          ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Net/ScriptSourceRunner.swift:168:13: note: class 'ScriptRuntime' does not conform to the 'Sendable' protocol
+final class ScriptRuntime {
+            ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Net/ScriptSourceRunner.swift:300:40: warning: capture of 'completion' with non-sendable type 'ScriptCompletion' in a '@Sendable' closure
+                self.context.setObject(completion, forKeyedSubscript: "__beansDone" as NSString)
+                                       ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Net/ScriptSourceRunner.swift:22:13: note: class 'ScriptCompletion' does not conform to the 'Sendable' protocol
+final class ScriptCompletion: NSObject, ScriptDoneBridge {
+            ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:6:5: error: property wrappers are not yet supported in top-level code
+    @EnvironmentObject private var store: PlayerStore
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:6:36: error: global 'var' declaration requires an initializer expression or an explicitly stated getter
+    @EnvironmentObject private var store: PlayerStore
+                                   ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:6:36: note: add an initializer to silence this error
+    @EnvironmentObject private var store: PlayerStore
+                                   ^
+                                           = <#initializer#>
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:7:5: error: property wrappers are not yet supported in top-level code
+    @State private var keyword = ""
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:8:5: error: property wrappers are not yet supported in top-level code
+    @State private var submitted = ""
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:9:5: error: property wrappers are not yet supported in top-level code
+    @State private var results = SearchResults()
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:10:5: error: property wrappers are not yet supported in top-level code
+    @State private var scope: Scope = .songs
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:11:5: error: property wrappers are not yet supported in top-level code
+    @State private var isLoading = false
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:12:5: error: property wrappers are not yet supported in top-level code
+    @State private var errorMessage: String?
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:13:5: error: property wrappers are not yet supported in top-level code
+    @State private var history: [String] = []
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:14:5: error: property wrappers are not yet supported in top-level code
+    @FocusState private var isFieldFocused: Bool
+    ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:14:29: error: global 'var' declaration requires an initializer expression or an explicitly stated getter
+    @FocusState private var isFieldFocused: Bool
+                            ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:14:29: note: add an initializer to silence this error
+    @FocusState private var isFieldFocused: Bool
+                            ^
+                                             = <#initializer#>
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:63:23: error: cannot find 'Self' in scope
+            history = Self.loadHistory()
+                      ^~~~
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:34:13: error: generic parameter 'R' could not be inferred
+            Group {
+            ^
+SwiftUI.Group.init:2:31: note: in call to initializer
+@inlinable nonisolated public init<R>(@TableRowBuilder<R> content: () -> Content) where R == Content.TableRowValue}
+                              ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:78:26: error: missing arguments for parameters #1, 'text' in call
+                TextField("姝屾洸銆佹瓕鎵嬨€佹瓕鍗?, text: $keyword)
+SwiftUI.TextField.init:3:22: note: 'init(_:text:)' declared here
+  nonisolated public init(_ titleKey: LocalizedStringKey, text: Binding<String>)}
+                     ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:161:33: error: cannot find 'PlaylistDetailView' in scope
+                                PlaylistDetailView(playlist: playlist)
+                                ^~~~~~~~~~~~~~~~~~
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:174:37: error: cannot find 'ArtistView' in scope
+                                    ArtistView(artist: artist)
+                                    ^~~~~~~~~~
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:190:33: error: cannot find 'AlbumView' in scope
+                                AlbumView(album: album)
+                                ^~~~~~~~~
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:222:9: error: generic parameter 'R' could not be inferred
+        Group {
+        ^
+SwiftUI.Group.init:2:31: note: in call to initializer
+@inlinable nonisolated public init<R>(@TableRowBuilder<R> content: () -> Content) where R == Content.TableRowValue}
+                              ^
+/Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift:280:9: error: cannot find 'Self' in scope
+        Self.saveHistory(history)
+        ^~~~
+
+Failed frontend command:
+/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -c /Users/runner/work/KUgou/KUgou/ios/Sources/Player/AppUpdater.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Player/ArtworkPalette.swift /Users/runner/work/KUgou/KUgou/ios/Sources/App/AuroraMusicApp.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Models/Catalog.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/Components.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Player/CoverResolver.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/DiscoverView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Player/DownloadManager.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Player/LibraryStore.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/LibraryView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Models/LyricLine.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/LyricsView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Net/NetEaseClient.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Net/NetEaseCrypto.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Player/PlayerStore.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlayerView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/ProfileView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/QueueView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/RootView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Net/ScriptSourceRunner.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Models/Song.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Net/SourceResolver.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/SourceSettingsView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Net/ThirdPartySource.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/UpdateView.swift /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/DerivedSources/GeneratedAssetSymbols.swift -supplementary-output-file-map /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/supplementaryOutputs-1 -emit-localized-strings -emit-localized-strings-path /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64 -target arm64-apple-ios16.0 -Xllvm -aarch64-use-tbi -enable-objc-interop -stack-check -sdk /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -I /Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos -F /Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos -no-color-diagnostics -g -debug-info-format\=dwarf -dwarf-version\=4 -module-cache-path /Users/runner/work/KUgou/KUgou/ios/build/ModuleCache.noindex -swift-version 5 -enforce-exclusivity\=checked -O -serialize-debugging-options -const-gather-protocols-file /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic_const_extract_protocols.json -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file /Users/runner/work/KUgou/KUgou/ios/build/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc /Users/runner/work/KUgou/KUgou/ios -resource-dir /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift -file-compilation-dir /Users/runner/work/KUgou/KUgou/ios -Xcc -ivfsstatcache -Xcc /Users/runner/work/KUgou/KUgou/ios/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-generated-files.hmap -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-own-target-headers.hmap -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-project-headers.hmap -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/DerivedSources -module-name AuroraMusic -frontend-parseable-output -disable-clang-spi -target-sdk-version 18.5 -target-sdk-name iphoneos18.5 -external-plugin-path /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins\#/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server -external-plugin-path /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/local/lib/swift/host/plugins\#/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server -in-process-plugin-server-path /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -plugin-path /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins -plugin-path /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/local/lib/swift/host/plugins -enable-default-cmo -num-threads 3 -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AppUpdater.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/ArtworkPalette.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusicApp.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/Catalog.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/Components.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/CoverResolver.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/DiscoverView.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/DownloadManager.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/LibraryStore.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/LibraryView.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/LyricLine.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/LyricsView.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/NetEaseClient.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/NetEaseCrypto.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/PlayerStore.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/PlayerView.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/PlaylistViews.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/ProfileView.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/QueueView.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/RootView.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/ScriptSourceRunner.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/SearchView.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/Song.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/SourceResolver.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/SourceSettingsView.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/ThirdPartySource.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/UpdateView.o -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/GeneratedAssetSymbols.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AppUpdater.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/ArtworkPalette.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusicApp.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/Catalog.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/Components.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/CoverResolver.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/DiscoverView.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/DownloadManager.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/LibraryStore.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/LibraryView.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/LyricLine.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/LyricsView.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/NetEaseClient.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/NetEaseCrypto.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/PlayerStore.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/PlayerView.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/PlaylistViews.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/ProfileView.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/QueueView.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/RootView.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/ScriptSourceRunner.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/SearchView.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/Song.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/SourceResolver.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/SourceSettingsView.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/ThirdPartySource.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/UpdateView.o -index-unit-output-path /AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/GeneratedAssetSymbols.o
+SwiftDriver\ Compilation AuroraMusic normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    builtin-Swift-Compilation -- /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name AuroraMusic -O -whole-module-optimization -enforce-exclusivity\=checked @/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -target arm64-apple-ios16.0 -g -module-cache-path /Users/runner/work/KUgou/KUgou/ios/build/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos -F /Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos -emit-localized-strings -emit-localized-strings-path /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64 -c -num-threads 3 -Xcc -ivfsstatcache -Xcc /Users/runner/work/KUgou/KUgou/ios/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -output-file-map /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/KUgou/KUgou/ios/build/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-generated-files.hmap -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-own-target-headers.hmap -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/AuroraMusic-project-headers.hmap -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/Objects-normal/arm64/AuroraMusic-Swift.h -working-directory /Users/runner/work/KUgou/KUgou/ios -no-emit-module-separately-wmo
+
+LinkAssetCatalog /Users/runner/work/KUgou/KUgou/ios/Sources/Resources/Assets.xcassets (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    builtin-linkAssetCatalog --thinned /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/assetcatalog_output/thinned --thinned-dependencies /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/assetcatalog_generated_info.plist_unthinned --output /Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos/AuroraMusic.app --plist-output /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/assetcatalog_generated_info.plist
+note: Emplaced /Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos/AuroraMusic.app/Assets.car (in target 'AuroraMusic' from project 'AuroraMusic')
+
+ProcessInfoPlistFile /Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos/AuroraMusic.app/Info.plist /Users/runner/work/KUgou/KUgou/ios/Sources/Resources/Info.plist (in target 'AuroraMusic' from project 'AuroraMusic')
+    cd /Users/runner/work/KUgou/KUgou/ios
+    builtin-infoPlistUtility /Users/runner/work/KUgou/KUgou/ios/Sources/Resources/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos/AuroraMusic.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -additionalcontentfile /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/assetcatalog_generated_info.plist -requiredArchitecture arm64 -o /Users/runner/work/KUgou/KUgou/ios/build/Build/Products/Release-iphoneos/AuroraMusic.app/Info.plist
+
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'AuroraMusic' from project 'AuroraMusic')
+** BUILD FAILED **
+
+
+The following build commands failed:
+	CompileSwift normal arm64 (in target 'AuroraMusic' from project 'AuroraMusic')
+	SwiftCompile normal arm64 Compiling\ AppUpdater.swift,\ ArtworkPalette.swift,\ AuroraMusicApp.swift,\ Catalog.swift,\ Components.swift,\ CoverResolver.swift,\ DiscoverView.swift,\ DownloadManager.swift,\ LibraryStore.swift,\ LibraryView.swift,\ LyricLine.swift,\ LyricsView.swift,\ NetEaseClient.swift,\ NetEaseCrypto.swift,\ PlayerStore.swift,\ PlayerView.swift,\ PlaylistViews.swift,\ ProfileView.swift,\ QueueView.swift,\ RootView.swift,\ ScriptSourceRunner.swift,\ SearchView.swift,\ Song.swift,\ SourceResolver.swift,\ SourceSettingsView.swift,\ ThirdPartySource.swift,\ UpdateView.swift,\ GeneratedAssetSymbols.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Player/AppUpdater.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Player/ArtworkPalette.swift /Users/runner/work/KUgou/KUgou/ios/Sources/App/AuroraMusicApp.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Models/Catalog.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/Components.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Player/CoverResolver.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/DiscoverView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Player/DownloadManager.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Player/LibraryStore.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/LibraryView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Models/LyricLine.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/LyricsView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Net/NetEaseClient.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Net/NetEaseCrypto.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Player/PlayerStore.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlayerView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/PlaylistViews.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/ProfileView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/QueueView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/RootView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Net/ScriptSourceRunner.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/SearchView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Models/Song.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Net/SourceResolver.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/SourceSettingsView.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Net/ThirdPartySource.swift /Users/runner/work/KUgou/KUgou/ios/Sources/Views/UpdateView.swift /Users/runner/work/KUgou/KUgou/ios/build/Build/Intermediates.noindex/AuroraMusic.build/Release-iphoneos/AuroraMusic.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'AuroraMusic' from project 'AuroraMusic')
+	Building project AuroraMusic with scheme AuroraMusic and configuration Release
+(3 failures)
