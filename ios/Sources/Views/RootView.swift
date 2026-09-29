@@ -68,7 +68,9 @@ struct MiniPlayer: View {
             CoverImage(url: store.current?.artworkURL,
                        seed: "\(store.current?.artist ?? "")-\(store.current?.title ?? "")",
                        size: 40,
-                       corner: 8)
+                       corner: 8,
+                       lookupTitle: store.current?.title,
+                       lookupArtist: store.current?.artist)
 
             VStack(alignment: .leading, spacing: 2) {
                 HStack(spacing: 6) {

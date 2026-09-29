@@ -87,6 +87,24 @@ final class ScriptBridge: NSObject, ScriptRequestBridge, ScriptUtilsBridge {
         return URLSession(configuration: config)
     }()
 
+    /// 只放行真正的 HTTP 动词，其它一律当 GET。
+    ///
+    /// 脚本里常见 `method: options.method || undefined` 这种写法，
+    /// 而 JSValue 对 undefined 调 `toString()` 得到的是字符串 "undefined"，
+    /// 于是 URLSession 发出 `undefined /path HTTP/1.1`，服务器直接回 400。
+    /// 实测长青音源的 `https://13413.kstore.vip/lxmusic/changqing.json`
+    /// 在 method=undefined 时是 400 Bad Request，method=GET 时 200。
+    private static func httpMethod(from options: JSValue?) -> String {
+        guard let raw = options?.forProperty("method") else { return "GET" }
+        if raw.isUndefined || raw.isNull { return "GET" }
+        guard let value = raw.toString() else { return "GET" }
+        let upper = value.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        let allowed: Set<String> = ["GET", "POST", "PUT", "DELETE", "HEAD", "PATCH", "OPTIONS"]
+        if allowed.contains(upper) { return upper }
+        Log.warn("脚本网络", "音源给了非法 method「\(value)」，按 GET 处理")
+        return "GET"
+    }
+
     func request(_ urlString: String?, _ options: JSValue?, _ callback: JSValue?) {
         guard let urlString, let url = URL(string: urlString) else {
             respond(callback, ["status": 0, "body": "", "bodyType": "text", "error": "地址无效"])
@@ -94,7 +112,7 @@ final class ScriptBridge: NSObject, ScriptRequestBridge, ScriptUtilsBridge {
         }
 
         var request = URLRequest(url: url)
-        request.httpMethod = (options?.forProperty("method")?.toString()) ?? "GET"
+        request.httpMethod = Self.httpMethod(from: options)
         request.setValue("AuroraMusic/1.0", forHTTPHeaderField: "User-Agent")
 
         // 脚本发出什么请求、拿到什么结果，之前完全没有记录，

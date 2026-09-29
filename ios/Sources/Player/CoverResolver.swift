@@ -17,6 +17,10 @@ final class CoverResolver {
 
     private let lock = NSLock()
     private var overrides: [String: URL] = [:]
+    /// 「歌名|歌手」→ 补查到的专辑图，避免同一首歌反复搜。
+    private var artworkCache: [String: URL] = [:]
+    /// 正在进行的补查任务，重复调用共享同一个 Task。
+    private var inflight: [String: Task<URL?, Never>] = [:]
 
     private init() {}
 
@@ -49,7 +53,73 @@ final class CoverResolver {
     func reset() {
         lock.lock()
         overrides.removeAll()
+        artworkCache.removeAll()
+        inflight.values.forEach { $0.cancel() }
+        inflight.removeAll()
         lock.unlock()
+    }
+
+    // MARK: - 缺图补查
+
+    /// 并发闸门：一次榜单可能 20+ 首全都没图，同时打 20 多个搜索请求容易超时。
+    private actor CoverLookupGate {
+        private let limit: Int
+        private var active = 0
+        private var waiters: [CheckedContinuation<Void, Never>] = []
+
+        init(limit: Int) { self.limit = limit }
+
+        func enter() async {
+            if active < limit {
+                active += 1
+                return
+            }
+            await withCheckedContinuation { continuation in
+                waiters.append(continuation)
+            }
+        }
+
+        func leave() {
+            if waiters.isEmpty {
+                active -= 1
+            } else {
+                let next = waiters.removeFirst()
+                next()
+            }
+        }
+    }
+
+    private static let gate = CoverLookupGate(limit: 4)
+
+    /// 歌曲缺封面时按「歌名 + 歌手」去酷狗搜一次，把专辑图补回来。
+    ///
+    /// 榜单页不带图片字段，必须走搜索才能拿到真实的歌曲自带封面。
+    /// 结果按 key 缓存，重复调用共享同一个 in-flight Task，并发数由闸门限制。
+    func songArtwork(title: String, artist: String) async -> URL? {
+        let key = "\(title)|\(artist)"
+        lock.lock()
+        if let cached = artworkCache[key] {
+            lock.unlock()
+            return cached
+        }
+        if let existing = inflight[key] {
+            lock.unlock()
+            return await existing.value
+        }
+        let task = Task<URL?, Never> { [weak self] in
+            await Self.gate.enter()
+            let found = await KugouClient.shared.coverLookup(title: title, artist: artist)
+            await Self.gate.leave()
+            guard let self else { return found }
+            self.lock.lock()
+            self.inflight[key] = nil
+            if let found { self.artworkCache[key] = found }
+            self.lock.unlock()
+            return found
+        }
+        inflight[key] = task
+        lock.unlock()
+        return await task.value
     }
 
     // MARK: - 从歌曲反查

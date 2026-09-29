@@ -50,6 +50,28 @@ final class KugouClient {
 
     // MARK: - 搜索
 
+    /// 按「歌名 + 歌手」反查专辑封面。
+    ///
+    /// 榜单页的 `global.features` 里只有 Hash/FileName/timeLen/album_id/author_name，
+    /// 一个图片字段都没有，所以榜单歌曲进 App 时 artworkURL 必然是 nil。
+    /// 试过 mobilecdn album/song、mobileservice song/info、gateway v3/song/info、
+    /// 单曲页，都拿不到专辑图；唯一稳定给 `Image` 的是搜索接口，
+    /// 所以缺图时走这条路补齐。
+    func coverLookup(title: String, artist: String) async -> URL? {
+        let name = title.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !name.isEmpty else { return nil }
+        let keyword = artist.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            ? name
+            : "\(name) \(artist.trimmingCharacters(in: .whitespacesAndNewlines))"
+        guard let results = try? await searchSongs(keyword: keyword, page: 1, limit: 5),
+              !results.isEmpty else { return nil }
+        // 优先歌名完全一致的，避免搜到同名歌的别的专辑
+        let exact = results.first { $0.title == name }
+        let cover = (exact ?? results.first)?.artworkURL
+        if let cover { Log.info("封面", "「\(keyword)」补到封面") }
+        return cover
+    }
+
     /// 搜索歌曲。返回空数组表示没搜到。
     func searchSongs(keyword: String, page: Int = 1, limit: Int = 30) async throws -> [Song] {
         var params: [String: String] = [
@@ -224,19 +246,14 @@ final class KugouClient {
             let rankID = KugouClient.string(item["rankid"]) ?? KugouClient.string(item["id"]) ?? ""
             guard !rankID.isEmpty else { return nil }
             let name = KugouClient.string(item["rankname"]) ?? "榜单"
-            // 实测字段是 img_9 下划线，不是 img9；写错会静默变成 nil，榜单全没封面
-            var cover = KugouClient.string(item["img_9"])
-                ?? KugouClient.string(item["img9"])
-                ?? KugouClient.string(item["imgurl"])
-            // 酷狗的封面地址带 {size} 占位
-            if let raw = cover {
-                cover = raw.replacingOccurrences(of: "{si}", with: "300")
-                    .replacingOccurrences(of: "{size}", with: "300")
-            }
-            return Playlist(id: "kg-rank:\(rankID)",
-                            name: name,
-                            coverURL: cover.flatMap { URL(string: $0) },
-                            // songcount 字段实际不存在，songinfo 只有 3 条推荐位——
+                // 实测字段是 img_9 下划线，不是 img9；写错会静默变成 nil，榜单全没封面
+                let cover = KugouClient.string(item["img_9"])
+                    ?? KugouClient.string(item["img9"])
+                    ?? KugouClient.string(item["imgurl"])
+                return Playlist(id: "kg-rank:\(rankID)",
+                                name: name,
+                                coverURL: KugouClient.imageURL(cover),
+                                // songcount 字段实际不存在，songinfo 只有 3 条推荐位——
                             // 之前拿 songinfo.count 当曲目数，结果所有榜单都显示「3 首」。
                             // 真实总数在榜单页的 global.total 里，由 rankTotal() 异步补。
                             trackCount: 0,
@@ -260,17 +277,56 @@ final class KugouClient {
                                         params: [:],
                                         headers: [:])
             // 形如 total: '500'
-            guard let range = html.range(of: "total:\\s*'") else { return nil }
-            let rest = html[range.upperBound...]
-            guard let end = rest.firstIndex(of: "'") else { return nil }
-            let digits = rest[rest.startIndex..<end]
-            guard let total = Int(digits), total > 0 else { return nil }
+            // 注意：String.range(of:) 默认是「字面量」匹配，不是正则，
+            // 之前写成 "total:\\s*'" 会去搜字面量 `total:\s*'`，永远匹配不到，
+            // 结果所有榜单都取不到真实曲目数。这里改成手工扫 + 数字提取。
+            guard let total = Self.intValue(afterTotalIn: html) else { return nil }
             Log.info("榜单", "rankid=\(numericID) 真实曲目数 \(total)")
             return total
         } catch {
-            Log.warn("榜单", "rankid=\(numericID) 取曲目数失败：\(error.localizedDescription)")
+            // 离开页面时任务会被取消，这属于正常收尾，不用刷 WARN。
+            let code = (error as? URLError)?.code
+            if code == .cancelled {
+                Log.debug("榜单", "rankid=\(numericID) 取曲目数已取消")
+            } else {
+                Log.warn("榜单", "rankid=\(numericID) 取曲目数失败：\(error.localizedDescription)")
+            }
             return nil
         }
+    }
+
+    /// 从榜单页 HTML 里抠出 `total: '500'` 的数值。
+    ///
+    /// 页面里可能还有别的 `total:`（脚本统计之类），所以从前往后逐个试，
+    /// 取第一个能解析成正整数的，避免抓到无关的那个。
+    private static func intValue(afterTotalIn html: String) -> Int? {
+        var cursor = html.startIndex
+        while let anchor = html.range(of: "total:", range: cursor..<html.endIndex) {
+            if let value = digits(after: html[anchor.upperBound...]) { return value }
+            guard anchor.upperBound < html.endIndex else { return nil }
+            cursor = anchor.upperBound
+        }
+        return nil
+    }
+
+    /// 吃掉 `'500'` / `"500"` / `500` 形式的数字。
+    private static func digits(after rest: String) -> Int? {
+        var text = Substring(rest)
+        // 先跳过空格和逗号
+        while let first = text.first, first.isWhitespace || first == "," {
+            text = text[text.index(after: first)...]
+        }
+        // 有引号就跳过引号
+        if let first = text.first, first == "'" || first == "\"" {
+            text = text[text.index(after: first)...]
+        }
+        var digits = ""
+        for ch in text {
+            guard ch.isNumber else { break }
+            digits.append(ch)
+        }
+        guard let value = Int(digits), value > 0 else { return nil }
+        return value
     }
 
     /// 榜单里的歌曲。
@@ -401,6 +457,21 @@ final class KugouClient {
         if let value = raw as? NSNumber { return value.intValue }
         if let text = raw as? String { return Int(text) }
         return nil
+    }
+
+    /// 酷狗图片地址归一化：填 {si}/{size} 占位，并把 http 升到 https。
+    ///
+    /// 酷狗榜单封面给的是 `http://imge.kugou.com/...`，而设备的 ATS 会直接拒掉：
+    /// 「The resource could not be loaded because the App Transport Security policy
+    /// requires the use of a secure connection」。实测同一个地址 https 也能正常返回
+    /// 同样的 10513 字节，所以这里统一升 https，不去跟 ATS 配置较劲。
+    static func imageURL(_ raw: String?) -> URL? {
+        guard var text = raw, !text.isEmpty else { return nil }
+        text = text
+            .replacingOccurrences(of: "{si}", with: "300")
+            .replacingOccurrences(of: "{size}", with: "300")
+        if text.hasPrefix("http://") { text = "https://" + text.dropFirst("http://".count) }
+        return URL(string: text)
     }
 }
 

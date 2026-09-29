@@ -93,12 +93,22 @@ struct CoverImage: View {
     var seed: String = "-"
     var size: CGFloat = 48
     var corner: CGFloat = 8
+    /// 缺图时用来去酷狗补查专辑图的歌名 / 歌手。
+    var lookupTitle: String? = nil
+    var lookupArtist: String? = nil
 
     @State private var image: UIImage?
     @State private var resolved: URL?
 
     private var effectiveURL: URL? {
-        url ?? resolved ?? CoverResolver.shared.firstAvailable(fallbackKeys)
+        // 兜底再升一次 https：酷狗很多图片字段是 http 形式，
+        // 设备 ATS 会直接拒掉（要求 secure connection），表现就是永远显示占位图。
+        let raw = url ?? resolved ?? CoverResolver.shared.firstAvailable(fallbackKeys)
+        guard let raw else { return nil }
+        guard raw.scheme?.lowercased() == "http",
+              let secure = URL(string: "https://" + raw.absoluteString.dropFirst("http://".count))
+        else { return raw }
+        return secure
     }
 
     var body: some View {
@@ -127,10 +137,23 @@ struct CoverImage: View {
 
     private func load() async {
         guard let target = effectiveURL else {
+            // 榜单歌曲进来时没有图片字段，先按「歌名 + 歌手」补查一次专辑图，
+            // 补到就存进 CoverResolver 并立刻重试加载。
+            if let title = lookupTitle, !title.isEmpty,
+               let found = await CoverResolver.shared.songArtwork(title: title, artist: lookupArtist ?? "") {
+                CoverResolver.shared.register(found, for: fallbackKeys + [seed])
+                resolved = found
+                await loadImage(from: found)
+                return
+            }
             image = nil
             Log.warn("封面", "「\(seed)」没有任何可用地址")
             return
         }
+        await loadImage(from: target)
+    }
+
+    private func loadImage(from target: URL) async {
         if target.isFileURL, let data = try? Data(contentsOf: target), let loaded = UIImage(data: data) {
             image = loaded
             return
@@ -242,7 +265,9 @@ struct SongRow: View {
                 CoverImage(url: song.artworkURL,
                            fallbackKeys: song.kugouHash.isEmpty ? [] : ["kg:\(song.kugouHash)"],
                            seed: "\(song.artist)-\(song.title)",
-                           size: 44)
+                           size: 44,
+                           lookupTitle: song.title,
+                           lookupArtist: song.artist)
                 .overlay(alignment: .bottomTrailing) {
                     if isPlaying {
                         Image(systemName: "waveform")

@@ -178,7 +178,9 @@ struct LibraryView: View {
                                                fallbackKeys: song.kugouHash.isEmpty ? [] : ["kg:\(song.kugouHash)"],
                                                seed: "\(song.artist)-\(song.title)",
                                                size: 108,
-                                               corner: 10)
+                                               corner: 10,
+                                               lookupTitle: song.title,
+                                               lookupArtist: song.artist)
                                         .overlay(alignment: .bottomTrailing) {
                                             if store.current?.id == song.id {
                                                 Image(systemName: "waveform")

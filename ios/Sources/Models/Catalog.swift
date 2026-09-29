@@ -88,12 +88,11 @@ extension Song {
 
         var cover: URL?
         for key in ["Image", "AlbumImage", "img", "Img"] {
-            if let raw = KugouClient.string(json[key]), !raw.isEmpty {
-                // 酷狗封面地址里有 {size} 占位
-                let fixed = raw.replacingOccurrences(of: "{si}", with: "300")
-                    .replacingOccurrences(of: "{size}", with: "300")
-                cover = URL(string: fixed)
-                if cover != nil { break }
+            // imageURL() 会填 {si}/{size} 占位并把 http 升到 https，
+            // 榜单页给的歌封面是 http 形式，ATS 会直接拒掉。
+            if let url = KugouClient.imageURL(KugouClient.string(json[key])) {
+                cover = url
+                break
             }
         }
 
