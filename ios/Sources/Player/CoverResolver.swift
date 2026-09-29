@@ -84,7 +84,7 @@ final class CoverResolver {
                 active -= 1
             } else {
                 let next = waiters.removeFirst()
-                next()
+                next.resume()
             }
         }
     }
@@ -96,30 +96,42 @@ final class CoverResolver {
     /// 榜单页不带图片字段，必须走搜索才能拿到真实的歌曲自带封面。
     /// 结果按 key 缓存，重复调用共享同一个 in-flight Task，并发数由闸门限制。
     func songArtwork(title: String, artist: String) async -> URL? {
-        let key = "\(title)|\(artist)"
+        let task = beginLookup(key: "\(title)|\(artist)", title: title, artist: artist)
+        return await task.value
+    }
+
+    /// 加锁部分全部收在同步方法里。
+    ///
+    /// NSLock.lock()/unlock() 在 async 上下文里会告警（Swift 6 模式下直接报错），
+    /// 所以这里把「查缓存 / 认领任务 / 回填结果」拆成三个普通同步方法，
+    /// async 函数里只负责 await，不碰锁。
+    private func beginLookup(key: String, title: String, artist: String) -> Task<URL?, Never> {
         lock.lock()
         if let cached = artworkCache[key] {
             lock.unlock()
-            return cached
+            return Task { cached }
         }
         if let existing = inflight[key] {
             lock.unlock()
-            return await existing.value
+            return existing
         }
         let task = Task<URL?, Never> { [weak self] in
             await Self.gate.enter()
             let found = await KugouClient.shared.coverLookup(title: title, artist: artist)
             await Self.gate.leave()
-            guard let self else { return found }
-            self.lock.lock()
-            self.inflight[key] = nil
-            if let found { self.artworkCache[key] = found }
-            self.lock.unlock()
+            self?.finishLookup(key: key, found: found)
             return found
         }
         inflight[key] = task
         lock.unlock()
-        return await task.value
+        return task
+    }
+
+    private func finishLookup(key: String, found: URL?) {
+        lock.lock()
+        inflight[key] = nil
+        if let found { artworkCache[key] = found }
+        lock.unlock()
     }
 
     // MARK: - 从歌曲反查

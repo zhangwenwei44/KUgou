@@ -68,7 +68,7 @@ final class KugouClient {
         // 优先歌名完全一致的，避免搜到同名歌的别的专辑
         let exact = results.first { $0.title == name }
         let cover = (exact ?? results.first)?.artworkURL
-        if let cover { Log.info("封面", "「\(keyword)」补到封面") }
+        if cover != nil { Log.info("封面", "「\(keyword)」补到封面") }
         return cover
     }
 
@@ -300,30 +300,28 @@ final class KugouClient {
     /// 页面里可能还有别的 `total:`（脚本统计之类），所以从前往后逐个试，
     /// 取第一个能解析成正整数的，避免抓到无关的那个。
     private static func intValue(afterTotalIn html: String) -> Int? {
-        var cursor = html.startIndex
-        while let anchor = html.range(of: "total:", range: cursor..<html.endIndex) {
-            if let value = digits(after: html[anchor.upperBound...]) { return value }
-            guard anchor.upperBound < html.endIndex else { return nil }
-            cursor = anchor.upperBound
+        var searchStart = html.startIndex
+        while let anchor = html.range(of: "total:", range: searchStart..<html.endIndex) {
+            if let value = digits(after: html.suffix(from: anchor.upperBound)) { return value }
+            searchStart = anchor.upperBound
+            if searchStart >= html.endIndex { break }
         }
         return nil
     }
 
     /// 吃掉 `'500'` / `"500"` / `500` 形式的数字。
-    private static func digits(after rest: String) -> Int? {
-        var text = Substring(rest)
-        // 先跳过空格和逗号
-        while let first = text.first, first.isWhitespace || first == "," {
-            text = text[text.index(after: first)...]
-        }
-        // 有引号就跳过引号
-        if let first = text.first, first == "'" || first == "\"" {
-            text = text[text.index(after: first)...]
-        }
+    ///
+    /// 用 Array<Character> 按下标走，避免在 Substring 上混用 Character 和 Index
+    /// 导致下标类型对不上。
+    private static func digits(after rest: Substring) -> Int? {
+        let chars = Array(rest.prefix(24))
+        var i = 0
+        while i < chars.count, chars[i].isWhitespace || chars[i] == "," { i += 1 }
+        if i < chars.count, chars[i] == "'" || chars[i] == "\"" { i += 1 }
         var digits = ""
-        for ch in text {
-            guard ch.isNumber else { break }
-            digits.append(ch)
+        while i < chars.count, chars[i].isNumber {
+            digits.append(chars[i])
+            i += 1
         }
         guard let value = Int(digits), value > 0 else { return nil }
         return value

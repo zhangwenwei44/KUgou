@@ -360,10 +360,14 @@ final class PlayerStore: ObservableObject {
     private static func loadArtwork(for song: Song) async -> UIImage? {
         // 榜单歌曲的 artworkURL 必然是 nil（榜单页不带图片字段），
         // 这里先按「歌名 + 歌手」补查一次专辑图，再走原来的下载逻辑。
-        let registered = song.kugouHash.isEmpty ? nil
-            : CoverResolver.shared.url(for: "kg:\(song.kugouHash)")
-        let remote = song.artworkURL ?? registered
-            ?? await CoverResolver.shared.songArtwork(title: song.title, artist: song.artist)
+        // 注意不能写成 `a ?? await b()`——await 不能出现在 ?? 右侧。
+        var remote = song.artworkURL
+        if remote == nil, !song.kugouHash.isEmpty {
+            remote = CoverResolver.shared.url(for: "kg:\(song.kugouHash)")
+        }
+        if remote == nil {
+            remote = await CoverResolver.shared.songArtwork(title: song.title, artist: song.artist)
+        }
         if let url = remote {
             let config = URLSessionConfiguration.default
             config.timeoutIntervalForRequest = 8
